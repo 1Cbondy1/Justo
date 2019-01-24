@@ -7,6 +7,7 @@ import ShowProfile from "./pages/Profile";
 import Landing from "./pages/Landing";
 import Login from './pages/Login';
 import history from './history';
+import ShowScreenShare from "./pages/ScreenShare";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/signout" component={Landing} />
         <Route path="/account/:id" component={ShowAccount} />
         <Route path="/profile" component={ShowProfile} />
+        <Route exact path="/screenshare" component={ShowScreenShare} />
       </div>
     </Router>
   );
