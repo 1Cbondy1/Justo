@@ -6,8 +6,10 @@ import "./style.css";
 import NameControls from "./NameControls";
 import RoomControls from "./RoomControls";
 
-import $ from 'jquery';
-window.jQuery = window.$ = $;
+// import $ from 'jquery';
+// window.jQuery = window.$ = $;
+
+import axios from 'axios';
 
 
 class ScreenShare extends React.Component {
@@ -49,7 +51,7 @@ class ScreenShare extends React.Component {
     }
 
     getUserScreen = () => {
-        var extensionId = "kgofjjkhfeobhifjgnckdipomamfjofd";
+        var extensionId = "chghiijpejnhlachknhopppjcnbelpin";
         if (!this.canScreenShare()) {
             return;
         }
@@ -59,6 +61,9 @@ class ScreenShare extends React.Component {
                     sources: ['screen']
                 };
                 chrome.runtime.sendMessage(extensionId, request, response => {
+                    console.log("sendMessage request:" + JSON.stringify(request));
+                    console.log("runtime response: " + response)
+                    console.log("runtime response.type: " + response.type)
                     if (response && response.type === 'success') {
                         resolve({ streamId: response.streamId });
                     } else {
@@ -121,9 +126,9 @@ class ScreenShare extends React.Component {
 
     // Obtain a token from the server in order to connect to the Room.
     getToken = id => {
-        $.getJSON('/token?identity=' + encodeURIComponent(id),  data => {
-            console.log("getData: " + JSON.stringify(data))
-            this.setState({ data: data });
+        axios.get('/token?identity=' + encodeURIComponent(id)).then(res => {
+            console.log("getData: " + JSON.stringify(res.data))
+            this.setState({ data: res.data });
             this.log("Ready and connected as '" + this.state.data.identity + "'...");
             document.getElementById('room-controls').style.display = 'block';
         });
@@ -210,7 +215,7 @@ render() {
             <div id="controls">
                 <NameControls token={this.getToken} />
                 <RoomControls data={this.state.data} activeRoom={this.state.activeRoom} screenTrack={this.state.screenTrack} setScreenTrack={this.setScreenTrack} getUserScreen={this.getUserScreen} roomJoined={this.roomJoined} />
-                <div id="log" ></div>
+                <div id="log" className="sidebyside"></div>
             </div>
         </div>
     )

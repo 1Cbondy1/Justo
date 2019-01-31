@@ -27,13 +27,15 @@ body {
 }
 
 #controls {
-  padding: 3em;
+  padding: 3em; 
   max-width: 1200px;
   margin: 0 auto;
 }
 
 #controls {
-  float: left;
+  display: inline-block;
+  flex-wrap: wrap;
+
 }
 
 #controls #room-controls,
@@ -100,8 +102,15 @@ body {
   padding-left: 1.5em;
 }
 
+.sidebyside {
+  display: inline-block;
+  vertical-align: top; 
+  float: right;
+}
+
 #controls #log {
   border: 1px solid #686865;
+  
 }
 
 #controls #room-controls {
@@ -130,14 +139,14 @@ body {
 }
 
 #controls #log {
-  width: 35%;
-  height: 9.5em;
+  min-width: 200px;
+  min-height: 100px;
   margin-top: 2.75em;
+  margin-left: 2em;
   text-align: left;
   padding: 1.5em;
-  float: right;
-  overflow-y: scroll;
 }
+
 
 #controls #log p {
   color: #686865;

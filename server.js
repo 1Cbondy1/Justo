@@ -655,3 +655,5 @@ app.post("/api/getPostings", function(req, res){
 		});
 	});
 });
+
+app.use(routes);
