@@ -9,7 +9,7 @@
     "persistent": false
   },
   "externally_connectable": {
-    "matches": ["*://localhost/*"]
+    "matches": ["*://localhost/*","*://immense-tor-63503.herokuapp.com/*"]
   },
   "permissions": ["desktopCapture"]
 }
