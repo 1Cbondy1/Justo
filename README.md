@@ -8,11 +8,11 @@ The market is flooded with platforms that allow businesses and freelancers to co
 Justo acts as the go-between for businesses and freelancers. It resembles a simple C2C, where the application acts as an intermediary - keeping all parties on the same timeline and ensuring that fair work is rewarded with fair pay.
 
 ### Main Contributers
-* Issac Hormel - Backend | Database, Routes
-* Peng Si - Frontend | React, Screen Share
-* Clayton Bondy - Frontend | React, UX/UI Design
-* Brian Duong - Backend | Authentication, Routes
-* Anna Park - Frontend | React, Routes
+* Clayton Bondy - Frontend Dev & React, UX/UI Design
+* Peng Si - Frontend & React, Screen Share
+* Anna Park - Frontend Dev & React, Routes
+* Brian Duong - Backend Dev & Authentication, Routes
+* Issac Hormel - Backend Dev & Database, Routes
 
 ### Requirements
 * React.js 
